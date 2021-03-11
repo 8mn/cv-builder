@@ -3,7 +3,7 @@ import classes from './editor.module.css'
 
 function Editor(){
     return(
-        <div>
+        <div className="container">
             Editor
         </div>
     )

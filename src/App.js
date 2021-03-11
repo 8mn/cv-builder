@@ -1,7 +1,7 @@
 import classes from './App.module.css';
 import Preview from '../src/components/preview/preview'
 import Editor from '../src/components/editor/editor'
-import React, { useState,useEffect } from 'react'
+import React, { useState} from 'react'
 
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
     setActive(!isActive);
     setInActive(!isInActive);
   };
-
 
   
   return (
@@ -29,8 +28,10 @@ function App() {
         >Editor</span>
         <span 
           className={isActive? classes.activeMode:classes.previewModeBtn}
-          onClick={toggleActive}>Preview</span>
+          onClick={toggleActive}
+          >Preview</span>
       </div>
+      {!isActive ? <Editor />:<Preview />}
     </div>
   );
 }
