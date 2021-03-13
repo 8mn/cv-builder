@@ -8,6 +8,12 @@ function App() {
   const [isActive, setActive] = useState(false);
   const [isInActive, setInActive] = useState(true);
 
+
+  const [firstName, setfirstName] = useState("First Name");
+  const [lastName, setlastName] = useState("Last Name");
+
+  const [email, setemail] = useState("someone@somemail.com");
+
   const toggleActive = () => {
     setActive(!isActive);
     setInActive(!isInActive);
@@ -31,7 +37,18 @@ function App() {
           onClick={toggleActive}
           >Preview</span>
       </div>
-      {!isActive ? <Editor />:<Preview />}
+      {!isActive ? <Editor 
+                    setfirstName={setfirstName}
+                    firstName={firstName}  
+                    setlastName={setlastName}
+                    lastName={lastName}
+                    email={email}
+                    setemail={setemail}/>
+                    :<Preview 
+                    firstName={firstName} 
+                    lastName={lastName}
+                    email={email}
+                    />}
     </div>
   );
 }
