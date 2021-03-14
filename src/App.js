@@ -9,10 +9,16 @@ function App() {
   const [isInActive, setInActive] = useState(true);
 
 
-  const [firstName, setfirstName] = useState("First Name");
+  const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("Last Name");
 
-  const [email, setemail] = useState("someone@somemail.com");
+  const [email, setemail] = useState("");
+  
+  const [phone, setphone] = useState("");
+  
+  const [role, setrole] = useState("");
+  const [workexp, setworkexp] = useState("")
+
 
   const toggleActive = () => {
     setActive(!isActive);
@@ -43,7 +49,11 @@ function App() {
                     setlastName={setlastName}
                     lastName={lastName}
                     email={email}
-                    setemail={setemail}/>
+                    setemail={setemail}
+                    phone={phone}
+                    setphone={setphone} 
+                    role={role}
+                    setrole={setrole} />
                     :<Preview 
                     firstName={firstName} 
                     lastName={lastName}

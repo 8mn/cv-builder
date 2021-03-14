@@ -18,8 +18,16 @@
     margin: auto;
     padding: 1rem;
     border: 2px solid black;
+    border-radius: 4px;
 }
 
 .push{
     width: max-content;
 }
+
+/* input{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 100px;
+    border: 1px solid black;
+} */

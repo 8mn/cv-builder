@@ -1,11 +1,12 @@
-import React,{useState} from 'react'
+import React from 'react'
 import classes from './editor.module.css'
+import Workexp from '../Workexp'
+
 
 function Editor(props){
     // const [fName, setfName] = useState('');
     // const [lName, setlName] = useState('');
     
-    // const [email, setemail] = useState('');
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -21,25 +22,61 @@ function Editor(props){
         e.preventDefault();
         props.setemail(e.target.value);
     }
+    const handlephone = (e) => {
+        e.preventDefault();
+        props.setphone(e.target.value);
+    }
+    const handlerole = (e) => {
+        e.preventDefault();
+        props.setrole(e.target.value);
+    }
     const pushedToPreview = () => {
         //so cool as animation
     }
+
+
+    let workExp = []
+
+    const addWorkExp = () => {
+        workExp.push(<Workexp />)
+        console.log(workExp)
+    }
+
+
 
     return(
         <div className="container">
             <h1 className={classes.heading}>Editor</h1>
             <div className={classes.container}>
                 <section className={classes.personalInfo}>
+                    <button onClick={pushedToPreview} className={classes.push}>PUSH TO Preview</button>
+                    <label htmlFor="">First Name</label>
                     <input type="text" 
                         onChange={handleChange} 
                         value={props.firstName}/>
+
+                    <label htmlFor="">Last Name</label>
                     <input type="text" 
                         onChange={handleLastName} 
                         value={props.lastName}/>
+
+                    <label htmlFor="">email</label>
                     <input type="email" 
                         onChange={handleEmail} 
                         value={props.email}/>
-                    <button onClick={pushedToPreview} className={classes.push}>SAVE</button>
+
+                    <label htmlFor="">phone Number</label>
+                    <input type="text" 
+                        onChange={handlephone} 
+                        value={props.phone}/>
+
+                    <label htmlFor="">Current Role</label>
+                        <input type="text" 
+                            onChange={handlerole} 
+                            value={props.role}/>
+                    <hr></hr>
+                    <Workexp />
+                            <button onClick={addWorkExp} >+ Work Experience</button>
                 </section>
             </div>
         </div>
