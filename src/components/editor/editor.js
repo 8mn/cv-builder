@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import classes from './editor.module.css'
 import Workexp from '../Workexp'
-
+import Eduexp from '../Educationexp' 
 
 function Editor(props){
     // const [fName, setfName] = useState('');
@@ -83,9 +83,9 @@ function Editor(props){
                             value={props.role}/>
                     <hr></hr>
                     {workExp}
-                    <div className="Workbtn">
-                            <button onClick={addHandler} >+ Work Experience</button>
-                    </div>
+                            <button onClick={addHandler} style={{width:"max-content"}}>+ Work Experience</button>
+                    {workExp}
+                    <button onClick={addHandler} style={{width:"max-content"}}>+ Education Experience</button>
                 </section>
             </div>
         </div>
