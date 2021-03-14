@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-export default function Workexp(props) {
+export default function Workexp() {
     return (
         <div className="workexp" style={{display:"flex",flexDirection:"column"}}>
         <label htmlFor="">Work Experience</label>
@@ -14,10 +14,6 @@ export default function Workexp(props) {
         <input type="text" placeholder=""/>
         <label htmlFor="">Further Descriptions or Achievements</label>
         <input type="text" placeholder=""/>
-        <button onClick={props.cancel} style={{width:"max-content"}}>+ Cancel</button>
     </div>
     )
 }
-
-
-// https://stackoverflow.com/questions/47007825/how-to-display-a-component-inside-a-component-multiple-times-on-click-in-reactjs

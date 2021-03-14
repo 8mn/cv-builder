@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import classes from './editor.module.css'
 import Workexp from '../Workexp'
 
@@ -7,6 +7,8 @@ function Editor(props){
     // const [fName, setfName] = useState('');
     // const [lName, setlName] = useState('');
     
+    
+    const [fieldCount, setfieldCount] = useState(0)
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -36,12 +38,17 @@ function Editor(props){
 
 
     let workExp = []
-
-    const addWorkExp = () => {
-        workExp.push(<Workexp />)
-        console.log(workExp)
+    
+    const removeHandler = () => {
+        setfieldCount(Math.min(fieldCount - 1, 1))
+      }
+    for (let i = 0; i < fieldCount; i++) {
+    workExp.push(<Workexp cancel={removeHandler}/>);
     }
 
+    const addHandler = () => {
+        setfieldCount(fieldCount + 1)
+    }
 
 
     return(
@@ -75,8 +82,10 @@ function Editor(props){
                             onChange={handlerole} 
                             value={props.role}/>
                     <hr></hr>
-                    <Workexp />
-                            <button onClick={addWorkExp} >+ Work Experience</button>
+                    {workExp}
+                    <div className="Workbtn">
+                            <button onClick={addHandler} >+ Work Experience</button>
+                    </div>
                 </section>
             </div>
         </div>
