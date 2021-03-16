@@ -9,6 +9,7 @@ function Editor(props){
     
     
     const [fieldCount, setfieldCount] = useState(0)
+    const [eduExp, seteduExp] = useState(0)
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -33,12 +34,13 @@ function Editor(props){
         props.setrole(e.target.value);
     }
     const pushedToPreview = () => {
-        //so cool as animation
+        //sick animation
     }
 
 
     let workExp = []
-    
+    let eduExps = []
+
     const removeHandler = () => {
         setfieldCount(Math.min(fieldCount - 1, 1))
       }
@@ -48,6 +50,20 @@ function Editor(props){
 
     const addHandler = () => {
         setfieldCount(fieldCount + 1)
+    }
+    
+    
+    // For education experience
+
+    const removeEduExp = () => {
+        seteduExp(Math.min(eduExp - 1, 1))
+      }
+    for (let i = 0; i < eduExp; i++) {
+    eduExps.push(<Eduexp cancelEduExp={removeEduExp }/>);
+    }
+
+    const addEduExp = () => {
+        seteduExp(eduExp + 1)
     }
 
 
@@ -84,8 +100,8 @@ function Editor(props){
                     <hr></hr>
                     {workExp}
                             <button onClick={addHandler} style={{width:"max-content"}}>+ Work Experience</button>
-                    {workExp}
-                    <button onClick={addHandler} style={{width:"max-content"}}>+ Education Experience</button>
+                    {eduExps}
+                            <button onClick={addEduExp} style={{width:"max-content"}}>+ Education Experience</button>
                 </section>
             </div>
         </div>

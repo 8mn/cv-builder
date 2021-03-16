@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Workexp() {
+export default function Workexp(props) {
     return (
         <div className="workexp" style={{display:"flex",flexDirection:"column"}}>
         <label htmlFor="">University or School Name</label>
@@ -11,6 +11,7 @@ export default function Workexp() {
         <input type="text" placeholder=""/>
         <label htmlFor="">Further Descriptions or Achievements</label>
         <input type="text" placeholder=""/>
+        <button onClick={props.cancelEduExp} style={{width:"max-content"}}>+ Cancel</button>
     </div>
     )
 }
