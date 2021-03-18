@@ -1,7 +1,17 @@
-
 import React from 'react'
 
 export default function Workexp(props) {
+
+    // const workObj = [
+    //     {
+    //         Company:'',
+    //         from:'',
+    //         to:'',
+    //         role:'',
+    //         description:''
+    //     }
+    // ]
+
     return (
         <div className="workexp" style={{display:"flex",flexDirection:"column"}}>
         <label htmlFor="">Work Experience</label>

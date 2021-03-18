@@ -3,7 +3,7 @@ import classes from './preview.module.css'
 
 function Preview(props){
     return(
-        <div>
+        <div className={classes.container}>
             Preview
             <h1>{props.firstName}</h1>
             <h1>{props.lastName}</h1>

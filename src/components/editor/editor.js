@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import classes from './editor.module.css'
 import Workexp from '../Workexp'
 import Eduexp from '../Educationexp' 
+import uuid from 'react-uuid'
 
 function Editor(props){
     // const [fName, setfName] = useState('');
@@ -45,7 +46,7 @@ function Editor(props){
         setfieldCount(Math.min(fieldCount - 1, 1))
       }
     for (let i = 0; i < fieldCount; i++) {
-    workExp.push(<Workexp cancel={removeHandler}/>);
+    workExp.push(<Workexp cancel={removeHandler} key={uuid()}/>);
     }
 
     const addHandler = () => {
@@ -54,9 +55,9 @@ function Editor(props){
     
     
     // For education experience
-
+    console.log(workExp)
     const removeEduExp = () => {
-        seteduExp(Math.min(eduExp - 1, 1))
+        seteduExp(eduExp - 1)
       }
     for (let i = 0; i < eduExp; i++) {
     eduExps.push(<Eduexp cancelEduExp={removeEduExp }/>);
